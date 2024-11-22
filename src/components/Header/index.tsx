@@ -19,7 +19,10 @@ export const Header = () => {
       <nav>
         <ul>
           <li>
-            <a href="/s">Home</a>
+            <a href="/s">Empresas</a>
+          </li>
+          <li>
+            <a href="/communities">Comunidades</a>
           </li>
           <li>
             <a href="/s/members">Integrantes</a>

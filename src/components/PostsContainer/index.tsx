@@ -10,10 +10,6 @@ export const PostsContainer = () => {
       <PostsHeader />
 
       <div className={postsContainerStyle.CreateNewSection}>
-        {/* 
-        Nesse botão você pode colocar para abrir um modal 
-        de criação de um item da lista
-        */}
         <button className={postsContainerStyle.CreateNewButton}>
           Create New Post
         </button>
