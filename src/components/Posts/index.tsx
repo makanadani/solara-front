@@ -15,17 +15,29 @@ export interface EmpresaProps {
 
 export const Posts = () => {
   const [empresas, setEmpresas] = useState<EmpresaProps[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
-  // Função para buscar dados da API
   const fetchEmpresas = async () => {
     try {
-      const response = await fetch("https://c2e8-2804-7f0-b300-8dca-ee9a-9770-bcd6-e484.ngrok-free.app/solara-java/rest/empresas");
-      if (!response.ok) throw new Error(`Erro: ${response.status}`);
-      
-      // Obter dados da API
-      const data = await response.json();
+      console.log("Iniciando requisição para API...");
+      const response = await fetch(
+        "https://c2e8-2804-7f0-b300-8dca-ee9a-9770-bcd6-e484.ngrok-free.app/solara-java/rest/empresas"
+      );
 
-      // Mapeando dados para corresponder aos campos esperados pelo componente Post
+      console.log("Response Status:", response.status);
+
+      const responseText = await response.text();
+      console.log("Response Text:", responseText);
+
+      if (!response.ok) {
+        throw new Error(`Erro na API: ${response.status}`);
+      }
+
+      // Tentar interpretar como JSON
+      const data = JSON.parse(responseText);
+      console.log("Dados JSON recebidos:", data);
+
       const mappedData = data.map((empresa: any) => ({
         id: empresa.idEmpresa,
         title: empresa.razaoSocialEmpresa,
@@ -38,38 +50,39 @@ export const Posts = () => {
       }));
 
       setEmpresas(mappedData);
+      setLoading(false);
     } catch (error) {
       console.error("Erro ao buscar dados:", error);
+      setError("Erro ao carregar empresas. Verifique a API.");
+      setLoading(false);
     }
   };
 
-  // Carregar dados ao montar o componente
   useEffect(() => {
     fetchEmpresas();
   }, []);
+
+  if (loading) return <p>Carregando dados...</p>;
+  if (error) return <p style={{ color: "red" }}>{error}</p>;
 
   return (
     <div className={postsStyles.Posts}>
       <div className={postsStyles.Aviso}>
         <p>
-          <strong>Aviso:</strong> Os dados apresentados nesta página são para fins acadêmicos e foram obtidos de fontes públicas, não representando parcerias reais com as empresas mencionadas.
+          <strong>Aviso:</strong> Os dados apresentados nesta página são para fins acadêmicos.
         </p>
       </div>
 
-      {empresas.length > 0 ? (
-        empresas.map((empresa) => (
-          <Post
-            key={empresa.id}
-            title={empresa.title}
-            description={empresa.description}
-            img_src={empresa.img_src}
-            qtd_comments={empresa.qtd_comments}
-            qtd_views={empresa.qtd_views}
-          />
-        ))
-      ) : (
-        <p>Carregando dados...</p>
-      )}
+      {empresas.map((empresa) => (
+        <Post
+          key={empresa.id}
+          title={empresa.title}
+          description={empresa.description}
+          img_src={empresa.img_src}
+          qtd_comments={empresa.qtd_comments}
+          qtd_views={empresa.qtd_views}
+        />
+      ))}
     </div>
   );
 };
