@@ -19,7 +19,7 @@ export const Posts = () => {
   // Função para buscar dados da API
   const fetchEmpresas = async () => {
     try {
-      const response = await fetch("https://20f6-2804-7f0-b300-8dca-ee9a-9770-bcd6-e484.ngrok-free.app/solara-java/rest/empresas");
+      const response = await fetch("https://c2e8-2804-7f0-b300-8dca-ee9a-9770-bcd6-e484.ngrok-free.app/solara-java/rest/empresas");
       if (!response.ok) throw new Error(`Erro: ${response.status}`);
       
       // Obter dados da API
