@@ -1,0 +1,12 @@
+.LoginWrapper, .RegisterWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url("/backgroundHomeSol.png");
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: calc(100vh - 80px);
+    width: 100vw;
+
+}

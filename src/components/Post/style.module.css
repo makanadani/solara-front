@@ -1,0 +1,36 @@
+.Post {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  padding-block: 1rem;
+  border-top: 1px solid lightgray;
+}
+
+.PostContent {
+  max-width: 450px;
+}
+
+.PostContent .Title {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.PostContent .Description {
+  font-size: 0.75rem;
+  font-weight: 300;
+}
+
+.ButtonsContainer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.Button {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}

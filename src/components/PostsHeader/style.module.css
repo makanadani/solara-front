@@ -1,0 +1,68 @@
+.PostsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+
+  min-height: 52px;
+
+  border-bottom: 1px solid lightgray;
+}
+
+.PostsHeader nav ul {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.PostsHeader nav ul a {
+  text-decoration: none;
+  color: var(--secondary);
+  font-size: 1rem;
+  font-weight: 300;
+
+  cursor: pointer;
+  transition: font-weight 0.2s;
+}
+
+.PostsHeader nav ul a:hover {
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.PostsHeader .Actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.SearchInput {
+  padding: 0.5rem 1rem;
+  border: 1px solid #000;
+  border-radius: 0;
+  font-size: 1rem;
+}
+
+.LoginSignupButton {
+  padding: 0.5rem 2rem;
+  background-color: transparent;
+
+  border-radius: 0;
+  border: 1px solid var(--secondary);
+
+  color: var(--secondary);
+  font-size: 1rem;
+
+  cursor: pointer;
+
+  transition: background-color 0.2s;
+}
+
+.LoginSignupButton:hover {
+  color: #fff;
+
+  background-color: var(--secondary);
+}

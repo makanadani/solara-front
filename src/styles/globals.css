@@ -1,0 +1,59 @@
+:root {
+  --primary: #80cc2b;
+  --secondary: #48770f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+.business_description {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 90%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+  .business_description {
+    flex-direction: row; /* Texto e imagem lado a lado */
+    align-items: flex-start; /* Alinha no topo */
+  }
+}
+
+.content_section {
+  flex: 1; /* O texto ocupa metade do espaço */
+  display: flex;
+  flex-direction: column; /* Garante que título e texto fiquem empilhados */
+  gap: 1rem; /* Espaçamento entre o título e o parágrafo */
+}
+
+.microgrid_image {
+  flex: 1; /* A imagem ocupa a outra metade */
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}

@@ -1,0 +1,37 @@
+.PostsContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+
+  width: 100%;
+  max-width: 980px;
+
+  background-color: #fff;
+
+  box-shadow: 0px 5px 5px #41414180;
+}
+
+.CreateNewSection {
+  text-align: right;
+
+  padding: 1rem 1rem 0 1rem;
+}
+
+.CreateNewButton {
+  padding: 0.5rem 2rem;
+  background-color: var(--secondary);
+
+  border-radius: 0;
+  border: none;
+
+  color: #fff;
+  font-size: 0.875rem;
+
+  cursor: pointer;
+
+  transition: filter 0.2s;
+}
+
+.CreateNewButton:hover {
+  filter: brightness(120%);
+}
